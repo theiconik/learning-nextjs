@@ -1,8 +1,8 @@
 const Footer = () => {
    return ( 
-      <div>
+      <footer>
          <p>Copyright © Next.js</p>
-      </div>
+      </footer>
     );
 }
  
