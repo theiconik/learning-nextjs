@@ -1,5 +1,6 @@
 import styles from '../../styles/people.module.css'
 import Head from "next/head"
+import Link from 'next/link';
 
 export const getStaticProps = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/users/');
@@ -20,9 +21,9 @@ const nextRoot = ({peoples}) => {
       <div>
         <h1>People</h1>
         {peoples.map(people => (
-          <div key={people.id}>
+          <Link href={"/people/" + people.id} key={people.id}>
           <a className={styles.single}>{people.name}</a>
-          </div>
+          </Link>
         ))}
       </div>
     </>
